@@ -12,7 +12,7 @@ var port = process.env.PORT || 8080;
 // create serve and configure it.
 const server = express();
 server.use(bodyParser.json());
-server.get('/getMovies',function (request,response)  {
+server.post('/getMovies',function (request,response)  {
     console.log("CIAO");
 
     response.send("Prova getMovies");
