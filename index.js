@@ -22,11 +22,17 @@ server.post('/getMovies',function (request,response)  {
     }*/
 
     if(request.body.result.action == 'input.welcome') {
-        //response.setHeader('Content-Type', 'application/json');
+        /*response.setHeader('Content-Type', 'application/json');
         response.send(JSON.stringify({
             "speech" : "Prova output webHook speech",
             "displayText" : "Prova output webHook displayText"
-        }));
+        }));*/
+
+        return res.json({
+                speech: teamExists.description,
+                displayText: teamExists.description,
+                source: 'team info'
+            });
     }
 
 
