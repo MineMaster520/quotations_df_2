@@ -14,6 +14,15 @@ const server = express();
 server.use(bodyParser.json());
 server.get('/getMovies',function (request,response)  {
     console.log("CIAO");
+
+    response.send("Prova getMovies");
+
+    /*return response.json({
+              speech: 'Something went wrong!',
+              displayText: 'Something went wrong!',
+              source: 'team info'
+    });*/
+
     /*if(request.body.result.parameters['vehicle']) {
         response.setHeader('Content-Type', 'application/json');
         response.send(JSON.stringify({
