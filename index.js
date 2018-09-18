@@ -11,7 +11,7 @@ var port = process.env.PORT || 8080;
 // create serve and configure it.
 const server = express();
 server.use(bodyParser.json());
-/*server.post('/getMovies',function (request,response)  {
+server.post('/getMovies',function (request,response)  {
     if(request.body.result.parameters['top-rated']) {
         var req = unirest("GET", "https://api.themoviedb.org/3/movie/top_rated");
             req.query({
@@ -110,7 +110,7 @@ server.use(bodyParser.json());
     }
 });
 
-*/
+
 
 server.post('/getWord', function(request, response) {
     /*if(request.body.result.parameters['top-rated']) {
@@ -151,7 +151,7 @@ server.post('/getWord', function(request, response) {
                 }
             });
     }
-    
+
 })
 
 server.get('/getName',function (req,res){
