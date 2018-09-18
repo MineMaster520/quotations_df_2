@@ -17,9 +17,9 @@ server.post('/getMovies',function (request,response)  {
 
     //response.send("{'speech' : 'Prova SPEECH', "displayText" : 'PROVA DISPLAYTEXT!' }");
 
-    if(request.queryResult.parameters['vehicle']) {
+    if(request.queryResult.parameters['vehicle'] == "un SUV") {
         return response.json({
-              fulfillmentText: 'Ciao speech!'
+              fulfillmentText: 'Ho trovato un SUV!'
         });
     }
 
