@@ -14,7 +14,7 @@ const server = express();
 server.use(bodyParser.json());
 server.post('/getMovies',function (request,response)  {
 
-    if(request.queryResult.parameters['vehicle']) {
+    if(request.body.queryResult.parameters['vehicle']) {
         return response.json({
               fulfillmentText: 'Prova'
         });
