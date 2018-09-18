@@ -123,7 +123,7 @@ server.post('/getWord', function(request, response) {
         }));
     }*/
 
-    if(request.body.result.parameters['top-rated']) {
+    if(request.body.result.parameters['geo-city']) {
         var req = unirest("GET", "https://api.themoviedb.org/3/movie/top_rated");
             req.query({
                 "page": "1",
