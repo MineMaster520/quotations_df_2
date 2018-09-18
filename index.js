@@ -13,16 +13,12 @@ var port = process.env.PORT || 8080;
 const server = express();
 server.use(bodyParser.json());
 server.post('/getMovies',function (request,response)  {
-    console.log("CIAO");
 
-    //response.send("{'speech' : 'Prova SPEECH', "displayText" : 'PROVA DISPLAYTEXT!' }");
-    var cia = request.queryResult.parameters;
-
-    //if(request.queryResult.parameters['vehicle'] == "un SUV") {
+    if(request.queryResult.parameters['vehicle']) {
         return response.json({
-              fulfillmentText: cia
+              fulfillmentText: 'Prova'
         });
-    //}
+    }
 
     /*if(request.body.result.parameters['vehicle']) {
         response.setHeader('Content-Type', 'application/json');
