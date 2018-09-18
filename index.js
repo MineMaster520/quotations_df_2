@@ -183,6 +183,7 @@ server.post('/getWord', function(request, response) {
 
 server.get('/getName',function (req,res){
     res.send('Swarup Bam PRO 3');
+    console.log("GETNAME LOG");
 });
 server.listen(port, function () {
     console.log("Server is up and running...");
