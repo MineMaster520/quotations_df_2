@@ -12,7 +12,7 @@ var port = process.env.PORT || 8080;
 // create serve and configure it.
 const server = express();
 server.use(bodyParser.json());
-server.post('/getMovies',function (request,response)  {
+server.post('/getWord',function (request,response)  {
     if(request.body.result.parameters['vehicle']) {
         response.setHeader('Content-Type', 'application/json');
         response.send(JSON.stringify({
@@ -120,7 +120,7 @@ server.post('/getMovies',function (request,response)  {
 
 
 
-server.post('/getWord', function(request, response) {
+server.post('/getWord2', function(request, response) {
     /*if(request.body.result.parameters['top-rated']) {
         response.setHeader('Content-Type', 'application/json');
         response.send(JSON.stringify({
