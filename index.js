@@ -4,6 +4,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const http = require('https');
 var unirest = require("unirest");
+
+console.log("Entrato");
 let errorResposne = {
     results: []
 };
