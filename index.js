@@ -11,7 +11,7 @@ var port = process.env.PORT || 8080;
 // create serve and configure it.
 const server = express();
 server.use(bodyParser.json());
-server.post('/getMovies',function (request,response)  {
+/*server.post('/getMovies',function (request,response)  {
     if(request.body.result.parameters['top-rated']) {
         var req = unirest("GET", "https://api.themoviedb.org/3/movie/top_rated");
             req.query({
@@ -109,6 +109,19 @@ server.post('/getMovies',function (request,response)  {
             });
     }
 });
+
+*/
+
+server.post('/getWord', function(request, response) {
+    if(request.body.result.parameters['top-rated']) {
+        response.setHeader('Content-Type', 'application/json');
+        response.send(JSON.stringify({
+            "speech" : "Prova output webHook speech",
+            "displayText" : "Prova output webHook displayText"
+        }));
+    }
+})
+
 server.get('/getName',function (req,res){
     res.send('Swarup Bam');
 });
