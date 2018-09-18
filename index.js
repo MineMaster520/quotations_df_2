@@ -17,11 +17,10 @@ server.post('/getMovies',function (request,response)  {
 
     //response.send("{'speech' : 'Prova SPEECH', "displayText" : 'PROVA DISPLAYTEXT!' }");
 
-    /*return response.json({
-              speech: 'Something went wrong!',
-              displayText: 'Something went wrong!',
-              source: 'team info'
-    });*/
+    return response.json({
+              speech: 'Ciao speech!',
+              displayText: 'Ciao displayText'
+    });
 
     /*if(request.body.result.parameters['vehicle']) {
         response.setHeader('Content-Type', 'application/json');
