@@ -31,11 +31,7 @@ server.get('/getMovies',function (request,response)  {
 
         
     }*/
-    return res.json({
-                speech: teamExists.description,
-                displayText: teamExists.description,
-                source: 'team info'
-    });
+    
 
 
 
