@@ -13,13 +13,13 @@ var port = process.env.PORT || 8080;
 const server = express();
 server.use(bodyParser.json());
 server.post('/getMovies',function (request,response)  {
-    if(request.body.result.parameters['vehicle']) {
+    /*if(request.body.result.parameters['vehicle']) {
         response.setHeader('Content-Type', 'application/json');
         response.send(JSON.stringify({
             "speech" : "Prova output webHook speech",
             "displayText" : "Prova output webHook displayText"
         }));
-    }
+    }*/
     /*if(request.body.result.parameters['geo-city']) {
         var req = unirest("GET", "https://api.themoviedb.org/3/movie/top_rated");
             req.query({
