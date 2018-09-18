@@ -21,7 +21,7 @@ server.post('/getMovies',function (request,response)  {
         }));
     }*/
 
-    if(request.body.result.action == input.welcome) {
+    if(request.body.result.action == 'input.welcome') {
         esponse.setHeader('Content-Type', 'application/json');
         response.send(JSON.stringify({
             "speech" : "Prova output webHook speech",
