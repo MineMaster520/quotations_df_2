@@ -13,7 +13,7 @@ var port = process.env.PORT || 8080;
 const server = express();
 server.use(bodyParser.json());
 server.post('/getMovies',function (request,response)  {
-    if(request.body.result.parameters['geo-city']) {
+    /*if(request.body.result.parameters['geo-city']) {
         var req = unirest("GET", "https://api.themoviedb.org/3/movie/top_rated");
             req.query({
                 "page": "1",
@@ -108,7 +108,7 @@ server.post('/getMovies',function (request,response)  {
                     })); 
                 }
             });
-    }
+    }*/
 });
 
 
