@@ -19,15 +19,17 @@ server.post('/getMovies',function (request,response)  {
             "speech" : "Prova output webHook speech",
             "displayText" : "Prova output webHook displayText"
         }));
-    }*/
+    }
 
     if(request.body.result.action == 'input.welcome') {
-        /*response.setHeader('Content-Type', 'application/json');
+        response.setHeader('Content-Type', 'application/json');
         response.send(JSON.stringify({
             "speech" : "Prova output webHook speech",
             "displayText" : "Prova output webHook displayText"
-        }));*/
+        }));
     }
+
+    */
 
     /*if(request.body.result.parameters['geo-city']) {
         var req = unirest("GET", "https://api.themoviedb.org/3/movie/top_rated");
@@ -172,7 +174,7 @@ server.post('/getWord', function(request, response) {
 })
 
 server.get('/getName',function (req,res){
-    res.send('Swarup Bam PRO 2');
+    res.send('Swarup Bam PRO 3');
 });
 server.listen(port, function () {
     console.log("Server is up and running...");
