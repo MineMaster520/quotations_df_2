@@ -16,12 +16,13 @@ server.post('/getMovies',function (request,response)  {
     console.log("CIAO");
 
     //response.send("{'speech' : 'Prova SPEECH', "displayText" : 'PROVA DISPLAYTEXT!' }");
+    var cia = request.queryResult.parameters;
 
-    if(request.queryResult.parameters['vehicle'] == "un SUV") {
+    //if(request.queryResult.parameters['vehicle'] == "un SUV") {
         return response.json({
-              fulfillmentText: 'Ho trovato un SUV!'
+              fulfillmentText: cia
         });
-    }
+    //}
 
     /*if(request.body.result.parameters['vehicle']) {
         response.setHeader('Content-Type', 'application/json');
