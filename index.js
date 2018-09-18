@@ -17,7 +17,7 @@ server.post('/getMovies',function (request,response)  {
 
     //response.send("{'speech' : 'Prova SPEECH', "displayText" : 'PROVA DISPLAYTEXT!' }");
 
-    if(!request.queryResult.allRequiredParamsPresent) {
+    if(!request.queryResult.parameters['vehicle']) {
         return response.json({
               fulfillmentText: 'Ciao speech!'
         });
