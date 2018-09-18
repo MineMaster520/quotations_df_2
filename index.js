@@ -19,7 +19,8 @@ server.post('/getMovies',function (request,response)  {
 
     return response.json({
               speech: 'Ciao speech!',
-              displayText: 'Ciao displayText'
+              displayText: 'Ciao displayText',
+              source: 'vehicle'
     });
 
     /*if(request.body.result.parameters['vehicle']) {
