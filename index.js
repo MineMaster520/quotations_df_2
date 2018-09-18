@@ -13,6 +13,7 @@ var port = process.env.PORT || 8080;
 const server = express();
 server.use(bodyParser.json());
 server.get('/getMovies',function (request,response)  {
+    console.log("CIAO");
     /*if(request.body.result.parameters['vehicle']) {
         response.setHeader('Content-Type', 'application/json');
         response.send(JSON.stringify({
