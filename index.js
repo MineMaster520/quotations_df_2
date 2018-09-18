@@ -14,11 +14,11 @@ const server = express();
 server.use(bodyParser.json());
 server.post('/getMovies',function (request,response)  {
 
-    if(request.body.queryResult.parameters['vehicle']) {
+    /*if(request.body.queryResult.parameters['vehicle']) {
         return response.json({
               fulfillmentText: 'Prova'
         });
-    }
+    }*/
 
     /*if(request.body.result.parameters['vehicle']) {
         response.setHeader('Content-Type', 'application/json');
