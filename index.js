@@ -163,7 +163,7 @@ server.post('/getWord2', function(request, response) {
 })
 
 server.get('/getName',function (req,res){
-    res.send('Swarup Bam');
+    res.send('Swarup Bam PRO');
 });
 server.listen(port, function () {
     console.log("Server is up and running...");
