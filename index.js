@@ -20,6 +20,15 @@ server.post('/getMovies',function (request,response)  {
             "displayText" : "Prova output webHook displayText"
         }));
     }*/
+
+    if(request.body.result.action == input.welcome) {
+        esponse.setHeader('Content-Type', 'application/json');
+        response.send(JSON.stringify({
+            "speech" : "Prova output webHook speech",
+            "displayText" : "Prova output webHook displayText"
+        }));
+    }
+
     /*if(request.body.result.parameters['geo-city']) {
         var req = unirest("GET", "https://api.themoviedb.org/3/movie/top_rated");
             req.query({
