@@ -15,7 +15,7 @@ server.use(bodyParser.json());
 server.post('/getMovies',function (request,response)  {
     console.log("CIAO");
 
-    response.send("Prova getMovies");
+    response.send("{speech: 'Prova SPEECH',displayText: 'PROVA DISPLAYTEXT!'}");
 
     /*return response.json({
               speech: 'Something went wrong!',
