@@ -26,8 +26,8 @@ server.post('/getMovies',function (request,resp)  {
 
         axios.get('http://quote.moveolux.com:88/home/testquote?from=milano&to=roma&day=13/12/2018&time=10:00')
           .then(response => {
-            console.log(response.data.url);
-            console.log(response.data.explanation);
+            //console.log(response.data.url);
+            //console.log(response.data.explanation);
             return response.json( {
                 fulfillmentText: response.data.url
             });
