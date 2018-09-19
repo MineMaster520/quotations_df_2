@@ -14,7 +14,7 @@ var port = process.env.PORT || 8080;
 // create serve and configure it.
 const server = express();
 server.use(bodyParser.json());
-server.post('/getMovies',function (request,resp)  {
+server.post('/getMovies',function (req,res)  {
 
     /*if(request.body.queryResult.parameters['vehicle']) {
         return response.json({
@@ -22,13 +22,13 @@ server.post('/getMovies',function (request,resp)  {
         });
     }*/
 
-    if(request.body.queryResult.allRequiredParamsPresent) {
+    if(req.body.queryResult.allRequiredParamsPresent) {
 
         axios.get('http://quote.moveolux.com:88/home/testquote?from=milano&to=roma&day=13/12/2018&time=10:00')
           .then(response => {
             //console.log(response.data.url);
             //console.log(response.data.explanation);
-            return response.json( {
+            return res.json( {
                 fulfillmentText: response.data.url
             });
           })
