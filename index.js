@@ -20,6 +20,12 @@ server.post('/getMovies',function (request,response)  {
         });
     }*/
 
+    if(request.body.queryResult.allRequiredParamsPresent) {
+        return response.json( {
+            fulfillmentText: 'Tutti i parametri richiesti sono presenti.'
+        });
+    }
+
   
 });
 
