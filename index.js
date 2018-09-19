@@ -4,6 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const http = require('https');
 var unirest = require("unirest");
+var request = require("request")
 
 let errorResposne = {
     results: []
@@ -21,9 +22,21 @@ server.post('/getMovies',function (request,response)  {
     }*/
 
     if(request.body.queryResult.allRequiredParamsPresent) {
-        return response.json( {
-            fulfillmentText: 'Tutti i parametri richiesti sono presenti.'
-        });
+        var url = "http://quote.moveolux.com:88/home/testquote?from=milano&to=roma&day=13/12/2018&time=10:00"
+
+        request({
+            url: url,
+            json: true
+        }, function (error, response, body) {
+
+            if (!error && response.statusCode === 200) {
+                console.log(body) // Print the json response
+                return response.json( {
+                    fulfillmentText: body
+                });
+            }
+        })
+
     }
 
   
