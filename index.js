@@ -3,9 +3,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const http = require('https');
-const axios = require('axios');
 
-var requestt = require('request');
+const requestt = require('request');
 
 var unirest = require("unirest");
 
