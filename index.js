@@ -22,7 +22,7 @@ server.post('/getMovies',function (request,response)  {
     }*/
 
     if(request.body.queryResult.allRequiredParamsPresent) {
-        var url = "http://quote.moveolux.com:88/home/testquote?from=milano&to=roma&day=13/12/2018&time=10:00"
+        var url = "http://quote.moveolux.com:88/home/testquote?from=milano&to=roma&day=13/12/2018&time=10:00";
 
         request({
             url: url,
