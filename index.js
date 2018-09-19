@@ -31,7 +31,7 @@ server.post('/getMovies',function (req,res)  {
             //console.log(response.data.url);
             //console.log(response.data.explanation);
 
-            respUrl = "AxiosResp: " + response.data.explanation;
+            respUrl = "AxiosResp: " + JSON.parse(response.data.url);
 
             return res.json( {
                 fulfillmentText: respUrl
@@ -55,6 +55,19 @@ server.post('/getMovies',function (req,res)  {
 server.get('/getName',function (req,res){
     res.send('Swarup Bam PRO 3');
     console.log("GETNAME LOG");
+
+    var respUrl = "Prov";
+
+        axios.get('http://quote.moveolux.com:88/home/testquote?from=milano&to=roma&day=13/12/2018&time=10:00')
+          .then(response => {
+            console.log(response.data.url);
+            console.log(response.data.explanation);
+            
+          })
+          .catch(error => {
+            console.log(error);
+        });
+
 });
 server.listen(port, function () {
     console.log("Server is up and running...");
