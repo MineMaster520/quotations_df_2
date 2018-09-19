@@ -24,10 +24,8 @@ server.post('/getMovies',function (req,res)  {
 
     if(req.body.queryResult.allRequiredParamsPresent) {
 
-        
-
         return res.json( {
-                fulfillmentText: 'Test';
+            fulfillmentText: 'Test';
         });
         
     }
@@ -40,21 +38,6 @@ server.post('/getMovies',function (req,res)  {
 server.get('/getName',function (req,res){
     res.send('Swarup Bam PRO 3');
     console.log("GETNAME LOG");
-
-    var respUrl = "Prov";
-
-        axios.get('http://quote.moveolux.com:88/home/testquote?from=milano&to=roma&day=13/12/2018&time=10:00')
-          .then(response => {
-            console.log(response.data.url);
-            console.log(response.data.explanation);
-            
-            res.send(response.data.url);
-
-          })
-          .catch(error => {
-            console.log(error);
-            res.send(error);
-        });
 
 });
 server.listen(port, function () {
