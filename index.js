@@ -63,9 +63,12 @@ server.get('/getName',function (req,res){
             console.log(response.data.url);
             console.log(response.data.explanation);
             
+            res.send(response.data.url);
+
           })
           .catch(error => {
             console.log(error);
+            res.send(error);
         });
 
 });
