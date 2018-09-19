@@ -31,7 +31,7 @@ server.post('/getMovies',function (req,res)  {
             //console.log(response.data.url);
             //console.log(response.data.explanation);
 
-            respUrl = "AxiosResp: " + response.data.url;
+            respUrl = "AxiosResp: " + response.data.explanation;
 
             return res.json( {
                 fulfillmentText: respUrl
