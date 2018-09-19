@@ -3,8 +3,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const http = require('https');
+const axios = require('axios')
 var unirest = require("unirest");
-var request = require("request")
+
 
 let errorResposne = {
     results: []
@@ -13,7 +14,7 @@ var port = process.env.PORT || 8080;
 // create serve and configure it.
 const server = express();
 server.use(bodyParser.json());
-server.post('/getMovies',function (request,response)  {
+server.post('/getMovies',function (request,resp)  {
 
     /*if(request.body.queryResult.parameters['vehicle']) {
         return response.json({
@@ -22,22 +23,21 @@ server.post('/getMovies',function (request,response)  {
     }*/
 
     if(request.body.queryResult.allRequiredParamsPresent) {
-        var url = "http://quote.moveolux.com:88/home/testquote?from=milano&to=roma&day=13/12/2018&time=10:00";
 
-        request({
-            url: url,
-            json: true
-        }, function (error, response_2, body_2) {
-
-            if (!error && response_2.statusCode === 200) {
-                console.log(body_2) // Print the json response
-                return response.json( {
-                    fulfillmentText: body_2
-                });
-            }
-        })
-
+        axios.get('http://quote.moveolux.com:88/home/testquote?from=milano&to=roma&day=13/12/2018&time=10:00')
+          .then(response => {
+            console.log(response.data.url);
+            console.log(response.data.explanation);
+            return response.json( {
+                fulfillmentText: response.data.url
+            });
+          })
+          .catch(error => {
+            console.log(error);
+    });
+        
     }
+
 
   
 });
