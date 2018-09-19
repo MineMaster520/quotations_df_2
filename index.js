@@ -31,14 +31,15 @@ server.post('/getMovies',function (req,res)  {
             //console.log(response.data.url);
             //console.log(response.data.explanation);
 
-            respUrl = response.data.url;
+            respUrl = "AxiosResp: " + response.data.url;
 
             return res.json( {
-            fulfillmentText: respUrl
-        });
+                fulfillmentText: respUrl
+            });
           })
           .catch(error => {
             console.log(error);
+
             return res.json( {
                 fulfillmentText: error
             });
