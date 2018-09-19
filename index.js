@@ -24,17 +24,22 @@ server.post('/getMovies',function (req,res)  {
 
     if(req.body.queryResult.allRequiredParamsPresent) {
 
+        var respUrl = "Prov";
+
         axios.get('http://quote.moveolux.com:88/home/testquote?from=milano&to=roma&day=13/12/2018&time=10:00')
           .then(response => {
             //console.log(response.data.url);
             //console.log(response.data.explanation);
-            return res.json( {
-                fulfillmentText: response.data.url
-            });
+
+            respUrl = response.data.url;
           })
           .catch(error => {
             console.log(error);
-    });
+        });
+
+        return res.json( {
+            fulfillmentText: respUrl
+        });
         
     }
 
