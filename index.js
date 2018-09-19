@@ -29,9 +29,9 @@ server.post('/getMovies',function (req,res)  {
 
         requestt.get("http://quote.moveolux.com:88/home/testquote?from=milano&to=roma&day=13/12/2018&time=10:00", (error, response, body) => {
             if(error) {
-                return console.dir(error);
+                //return console.dir(error);
             }
-            console.dir(JSON.parse(body));
+            //console.dir(JSON.parse(body));
             return res.json( {
                 fulfillmentText: JSON.parse(body);
             });
