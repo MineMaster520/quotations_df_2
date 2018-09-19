@@ -27,12 +27,12 @@ server.post('/getMovies',function (request,response)  {
         request({
             url: url,
             json: true
-        }, function (error, response, body) {
+        }, function (error, response_2, body_2) {
 
-            if (!error && response.statusCode === 200) {
-                console.log(body) // Print the json response
+            if (!error && response_2.statusCode === 200) {
+                console.log(body_2) // Print the json response
                 return response.json( {
-                    fulfillmentText: body
+                    fulfillmentText: body_2
                 });
             }
         })
