@@ -3,7 +3,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const http = require('https');
-const axios = require('axios')
+const axios = require('axios');
+
+var requestt = require('request');
+
 var unirest = require("unirest");
 
 
@@ -24,24 +27,13 @@ server.post('/getMovies',function (req,res)  {
 
     if(req.body.queryResult.allRequiredParamsPresent) {
 
-        var respUrl = "Prov";
-
-        axios.get('http://quote.moveolux.com:88/home/testquote?from=milano&to=roma&day=13/12/2018&time=10:00')
-          .then(response => {
-            //console.log(response.data.url);
-            //console.log(response.data.explanation);
-
-            respUrl = "AxiosResp: " + JSON.parse(response.data.url);
-
+        requestt.get("http://quote.moveolux.com:88/home/testquote?from=milano&to=roma&day=13/12/2018&time=10:00", (error, response, body) => {
+            if(error) {
+                return console.dir(error);
+            }
+            console.dir(JSON.parse(body));
             return res.json( {
-                fulfillmentText: respUrl
-            });
-          })
-          .catch(error => {
-            console.log(error);
-
-            return res.json( {
-                fulfillmentText: error
+                fulfillmentText: JSON.parse(body);
             });
         });
         
