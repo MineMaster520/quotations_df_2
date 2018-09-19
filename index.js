@@ -32,13 +32,16 @@ server.post('/getMovies',function (req,res)  {
             //console.log(response.data.explanation);
 
             respUrl = response.data.url;
+
+            return res.json( {
+            fulfillmentText: respUrl
+        });
           })
           .catch(error => {
             console.log(error);
-        });
-
-        return res.json( {
-            fulfillmentText: respUrl
+            return res.json( {
+                fulfillmentText: error
+            });
         });
         
     }
